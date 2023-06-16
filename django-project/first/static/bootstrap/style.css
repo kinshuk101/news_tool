@@ -1,0 +1,39 @@
+ $rhythm: 25px;
+
+.c-form {
+    display: block;
+    border: none;
+    margin: #{ $rhythm * 2 } auto;
+    max-width: 500px;
+    
+    &__heading {
+        display: block;
+        width: 100%;
+        font-size: 2rem;
+        line-height: 1.2;
+        border-bottom: 1px solid #ccc;
+        padding: 0 0 5px 0;
+        margin: 0 0 10px 0;
+    }
+    
+    &__row {
+        & + & {
+            padding-top: $rhythm;
+        }
+        
+        // Make any field fill at least 2/3 
+        [name] {
+            min-width: percentage(2/3);
+        }
+    }
+}
+
+
+
+
+
+// Presentational styles
+body {
+    background: #f3f3f3;
+    font-family: sans-serif;
+}

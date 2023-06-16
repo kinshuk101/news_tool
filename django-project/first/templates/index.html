@@ -1,0 +1,125 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>News Tool</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="/static/bootstrap/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      html
+    {
+    font-size: 100%;
+    }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      body{
+        background-color: #003865;
+        color: #fff;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/bootstrap/form-validation.css" rel="stylesheet">
+  </head>
+  <body class="">
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+     
+      <h2>News Tool</h2>
+      <p class="lead">Below is an example of news tool mode with python and django </p>
+    </div>
+
+    <div class="row g-5">
+     
+      
+      <div class="col-md-12 col-lg-12">
+        <h4 class="mb-3">Fill the below:</h4>
+
+        <form name="news-tool" action="" class="news-tool" method="POST">
+          {% csrf_token %}
+          <div class="row g-3">
+            <div class="col-sm-4">
+              <label for="form-label" class="form-label">News Paper</label>
+              <select name ="newspaper"class="form-select" aria-label="Default select example">
+                <option value ="{{data.newspaper}}" selected>{{data.newspaper}}</option>
+                <option value="processed_nytimes_data.json">New York Times</option>
+                <option value="guardian_data_3_months.json">The Guardian</option>
+                <option value="processed_reuters_data.json">Reuters</option>
+              </select>
+            </div>
+
+            <div class="col-sm-4">
+              <label for="start_date" class="form-label">Start date</label>
+              <input type="date" class="form-control" id="start_date" name="start_date"  value="{{data.startd}}">
+               
+            </div>
+            <div class="col-sm-4">
+              <label for="end_date" class="form-label">End date</label>
+              <input type="date" class="form-control" id="end_date"  value="{{data.endd}}" name="end_date">
+            </div> 
+             <input type="submit" name="submit" value="Submit"  class="btn btn-dark"/>
+
+        </form>
+      </div>
+    </div>
+  </main> 
+</div>
+<br>
+<br>
+<div class="container">
+ <table class="table text-white">
+  <thead class="">
+    <tr>
+      <th scope="col" >#</th>
+      <th scope="col" >Keyword</th>
+      <th scope="col" >Frequency</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for key,value in data.items%}
+    <tr class="">
+      {%if key != 'startd' and key != 'endd' and key != 'newspaper'  %} 
+      <td scope="row">{{forloop.counter}}</td>
+      <td>{{key}}</td>
+      <td>{{value}}</td>
+      {% endif %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>  
+</div>
+
+
+    <script src="/static/bootstrap/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="/static/bootstrap/form-validation.js"></script>
+  </body>
+</html>

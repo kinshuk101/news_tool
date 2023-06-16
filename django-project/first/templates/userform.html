@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Images</title>
+</head>
+<body>
+    {% for url in image_urls %}
+        <img src="{{ url }}" alt="Instagram Image">
+    {% endfor %}
+</body>
+</html>
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="/static/bootstrap/style.css">
+  </head>
+  <body>
+    <form class="boilerform" method="get">
+        <fieldset class="c-form">
+            <legend class="c-form__heading">Contact form</legend>
+             <div class="c-form__row">
+                <label for="startd" class="c-label">Start Date</label>
+                <input type="date" name="startd" id="startd" class="c-input-field" value="" autocorrect="off" required />
+            </div>
+            <div class="c-form__row">
+                <label for="endd" class="c-label">End Date</label>
+                <input type="date" name="endd" id="endd" autocapitalize="none" autocorrect="off" class="c-input-field" required />
+            </div> 
+            <br>
+            <div class="c-form__row">
+                <button class="c-button" type="submit">Submit</button>    
+            </div>
+            <input type="text" value="{{startd}}"
+
+        </fieldset>
+    </form>
+  </body>
+</html> {% endcomment %}

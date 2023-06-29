@@ -7,5 +7,5 @@ The News Tool is a web application built with Django and Python that utilizes th
 - User-friendly web interface built with Django.
 - Integration with NLTK for natural language processing and analysis.
 - Fetches news articles from The New York Times, The Guardian, and Reuters.
-- Displays the 70 most frequent words used in the selected newspapers.
+- Displays the 100 most frequent words used in the selected newspapers.
 - Allows users to select a specific date for fetching keywords.
